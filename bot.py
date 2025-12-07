@@ -57,7 +57,7 @@ async def logUserBot():
             
         try:
             for i in groups_info:
-                if i['group_name'] not in ["Spam 2024", "Spam 2024"]:
+                if i['group_name'] not in ["SPAM", "Spam 2024"]:
                     j=0
                     for message_spam in messages_list:
                         j+=1
@@ -70,7 +70,7 @@ async def logUserBot():
                         if resultado:
                             await client.send_message(os.getenv("LOGS_CHANNEL"), f'<b>Mensaje enviado a {i["group_id"]}</b> - <code>{i["group_name"]}</code>',parse_mode="HTML")  
                         await asyncio.sleep(3)
-                        if j==3: break
+                        if j==5: break
             await client.send_message(os.getenv("LOGS_CHANNEL"), f'<b>RONDA ACABADA</b>', parse_mode="HTML")
             await asyncio.sleep(60) 
         except:
@@ -78,4 +78,5 @@ async def logUserBot():
 
             
 if __name__ == "__main__":
+
     asyncio.run(logUserBot())
