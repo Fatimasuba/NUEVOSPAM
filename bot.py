@@ -1,4 +1,4 @@
-from dotenv import load_dotenv
+from .env import .env
 from telethon.sync import TelegramClient, events
 import os
 import json
@@ -80,3 +80,4 @@ async def logUserBot():
 if __name__ == "__main__":
 
     asyncio.run(logUserBot())
+
