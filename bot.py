@@ -1,4 +1,4 @@
-from .env import .env
+from dotenv import load_dotenv
 from telethon.sync import TelegramClient, events
 import os
 import json
@@ -51,13 +51,13 @@ async def logUserBot():
         messages_list = await getMessagesFromGroup(client, spammer_group)
             
         try:
-            await client.send_message("@", f"<b>CANTIDAD DE MENSAJES CONSEGUIDOS PARA PUBLICAR</b> <code>{len(messages_list)-1}</code>",parse_mode="HTML")
+            await client.send_message("@botspamltdf2", f"<b>CANTIDAD DE MENSAJES CONSEGUIDOS PARA PUBLICAR</b> <code>{len(messages_list)-1}</code>",parse_mode="HTML")
         except:
             pass
             
         try:
             for i in groups_info:
-                if i['group_name'] not in ["SPAM", "Spam 2024"]:
+                if i['group_name'] not in ["PUBLICIDADLTDF", "INFOGR"]:
                     j=0
                     for message_spam in messages_list:
                         j+=1
@@ -69,15 +69,14 @@ async def logUserBot():
                             resultado = False
                         if resultado:
                             await client.send_message(os.getenv("LOGS_CHANNEL"), f'<b>Mensaje enviado a {i["group_id"]}</b> - <code>{i["group_name"]}</code>',parse_mode="HTML")  
-                        await asyncio.sleep(3)
+                        await asyncio.sleep(5)
                         if j==5: break
             await client.send_message(os.getenv("LOGS_CHANNEL"), f'<b>RONDA ACABADA</b>', parse_mode="HTML")
-            await asyncio.sleep(60) 
+            await asyncio.sleep(600) 
         except:
             pass
 
             
 if __name__ == "__main__":
-
     asyncio.run(logUserBot())
-
+    
