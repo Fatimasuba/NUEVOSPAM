@@ -57,7 +57,7 @@ async def logUserBot():
             
         try:
             for i in groups_info:
-                if i['group_name'] not in ["PUBLICIDADLTDF", "INFOGR"]:
+                if i['group_name'] not in ["PUBLICIDADLTDF", "INFOGR","🎭 MUNDO STREAMING PERÚ 🇵🇪"]:
                     j=0
                     for message_spam in messages_list:
                         j+=1
@@ -80,4 +80,5 @@ async def logUserBot():
 if __name__ == "__main__":
     asyncio.run(logUserBot())
     
+
 
