@@ -51,13 +51,13 @@ async def logUserBot():
         messages_list = await getMessagesFromGroup(client, spammer_group)
             
         try:
-            await client.send_message("@infogrltdf", f"<b>CANTIDAD DE MENSAJES CONSEGUIDOS PARA PUBLICAR</b> <code>{len(messages_list)-1}</code>",parse_mode="HTML")
+            await client.send_message("@infogrltdf2", f"<b>CANTIDAD DE MENSAJES CONSEGUIDOS PARA PUBLICAR</b> <code>{len(messages_list)-1}</code>",parse_mode="HTML")
         except:
             pass
             
         try:
             for i in groups_info:
-                if i['group_name'] not in ["PUBLICIDADLTDF", "INFOGR","🎭 MUNDO STREAMING PERÚ 🇵🇪","INFOGRR"]:
+                if i['group_name'] not in ["PUBLICIDADLTDF", "INFOGR","🎭 MUNDO STREAMING PERÚ 🇵🇪","INFOGRLTDF2"]:
                     j=0
                     for message_spam in messages_list:
                         j+=1
@@ -72,7 +72,7 @@ async def logUserBot():
                         await asyncio.sleep(5)
                         if j==5: break
             await client.send_message(os.getenv("LOGS_CHANNEL"), f'<b>RONDA ACABADA</b>', parse_mode="HTML")
-            await asyncio.sleep(600) 
+            await asyncio.sleep(300) 
         except:
             pass
 
@@ -80,6 +80,7 @@ async def logUserBot():
 if __name__ == "__main__":
     asyncio.run(logUserBot())
     
+
 
 
 
